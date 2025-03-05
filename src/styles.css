@@ -1,0 +1,28 @@
+body * {
+    text-align: center;
+}
+
+button {
+    background-color: gray;
+    height: 5vh;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.correct {
+    background-color: green;
+}
+
+.error {
+    background-color: red;
+}
+
+.passo {
+    background-color: yellow;
+}
+
+#root {
+    max-width: 500px;
+    margin: 0 auto;
+}
