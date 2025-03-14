@@ -112,12 +112,12 @@ export default function Board() {
       <h2>score: {score}</h2>
       <h2>passo: {passo}</h2>
       <h2>time: {timeLeft}s</h2>
-      <p><button onClick={() => start()} disabled={isRunning || !answered || timeLeft <= 0}>START</button></p>
-      <p><button onClick={() => pause()} disabled={!isRunning || timeLeft <= 0}>BUZZ IN</button></p>
+      <p><button onClick={() => start()} disabled={isRunning || !answered || timeLeft <= 0}>VAI</button></p>
+      <p><button onClick={() => pause()} disabled={!isRunning || timeLeft <= 0}>PRENOTA</button></p>
       <p><button onClick={() => doPasso()} disabled={!isRunning || timeLeft <= 0 || passo <= 0} className='passo'>PASSO</button></p>
-      <p><button onClick={() => correct()} disabled={!isPaused || answered} className='correct'>CORRECT</button></p>
-      <p><button onClick={() => error()} disabled={!isPaused || answered} className='error'>ERROR</button></p>
-      <p><button onClick={() => reset()}>RESET</button></p>
+      <p><button onClick={() => correct()} disabled={!isPaused || answered} className='correct'>CORRETTO</button></p>
+      <p><button onClick={() => error()} disabled={!isPaused || answered} className='error'>ERRORE</button></p>
+      <p><button onClick={() => reset()}>RICOMINCIA</button></p>
       <h2>{word.toUpperCase()}</h2>
     </>
   );
