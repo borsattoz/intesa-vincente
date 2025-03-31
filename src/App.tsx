@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 export default function Board() {
   const INITIAL_TIME = 60;
@@ -9,7 +9,8 @@ export default function Board() {
   const INITIAL_SCORE = 0;
   const INITIAL_PASSO = 3;
   const INITIAL_WORDS: string[] = [];
-  const INITIAL_WORD = "";
+
+  const INITIAL_WORD = "PRONTI";
 
   const [timeLeft, setTimeLeft] = useState(INITIAL_TIME);
   const [isRunning, setIsRunning] = useState(INITIAL_RUNNING);
@@ -19,6 +20,11 @@ export default function Board() {
   const [score, setScore] = useState(INITIAL_SCORE);
   const [words, setWords] = useState(INITIAL_WORDS);
   const [word, setWord] = useState(INITIAL_WORD);
+
+  const isDisabledStart = useMemo(() => isRunning || !answered || timeLeft <= 0, [isRunning, answered, timeLeft]);
+  const isDisabledPause = useMemo(() => !isRunning || timeLeft <= 0, [isRunning, timeLeft]);
+  const isDisabledPasso = useMemo(() => !isRunning || timeLeft <= 0 || passo <= 0, [isRunning, timeLeft, passo]);
+  const isDisabledAnswer = useMemo(() => !isPaused || answered, [isPaused, answered]);
 
   const reset = () => {
     setIsPaused(INITIAL_PAUSED);
@@ -107,18 +113,18 @@ export default function Board() {
   };
 
   return (
-    <>
+    <div className='nes-container is-dark'>
       <h1>L'intesa vincente</h1>
-      <h2>score: {score}</h2>
-      <h2>passo: {passo}</h2>
-      <h2>time: {timeLeft}s</h2>
-      <p><button onClick={() => start()} disabled={isRunning || !answered || timeLeft <= 0}>VAI</button></p>
-      <p><button onClick={() => pause()} disabled={!isRunning || timeLeft <= 0}>PRENOTA</button></p>
-      <p><button onClick={() => doPasso()} disabled={!isRunning || timeLeft <= 0 || passo <= 0} className='passo'>PASSO</button></p>
-      <p><button onClick={() => correct()} disabled={!isPaused || answered} className='correct'>CORRETTO</button></p>
-      <p><button onClick={() => error()} disabled={!isPaused || answered} className='error'>ERRORE</button></p>
-      <p><button onClick={() => reset()}>RICOMINCIA</button></p>
-      <h2>{word.toUpperCase()}</h2>
-    </>
+      <p>score: {score}</p>
+      <p>passo: {passo}</p>
+      <p>time: {timeLeft}s</p>
+      <h2 className='nes-container is-dark'>{word.toUpperCase()}</h2>
+      <p><button onClick={() => start()} disabled={isDisabledStart} className={`nes-btn ${isDisabledStart ? "is-disabled" : ""}`}>VIA</button></p>
+      <p><button onClick={() => pause()} disabled={isDisabledPause} className={`nes-btn ${isDisabledPause ? "is-disabled" : ""}`}>PRENOTA</button></p>
+      <p><button onClick={() => doPasso()} disabled={isDisabledPasso} className={`nes-btn is-warning ${isDisabledPasso ? "is-disabled" : ""}`}>PASSO</button></p>
+      <p><button onClick={() => correct()} disabled={isDisabledAnswer} className={`nes-btn is-success ${isDisabledAnswer ? "is-disabled" : ""}`}>CORRETTO</button></p>
+      <p><button onClick={() => error()} disabled={isDisabledAnswer} className={`nes-btn is-error ${isDisabledAnswer ? "is-disabled" : ""}`}>ERRORE</button></p>
+      <p><button onClick={() => reset()} className='nes-btn'>RICOMINCIA</button></p>
+    </div>
   );
 }
