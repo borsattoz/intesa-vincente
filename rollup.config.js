@@ -3,6 +3,7 @@ import { copy } from '@web/rollup-plugin-copy';
 import css from 'rollup-plugin-import-css';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
+import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 
 const ENV = 'production';
@@ -12,7 +13,7 @@ export default {
     output: {
 	dir: 'dist',
 	format: 'esm',
-	sourcemap: ENV === 'production' ? false : true,
+	sourcemap: false,
     },
     plugins: [
 	typescript(),
@@ -25,6 +26,7 @@ export default {
 	css({
 	    inject: true,
 	}),
+	terser(),
 	copy({
 	    rootDir: 'src',
 	    patterns: [
