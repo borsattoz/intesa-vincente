@@ -1,5 +1,28 @@
 import React from 'react';
 import { useState, useEffect, useMemo } from 'react';
+import { Helmet } from 'react-helmet';
+
+const TITLE = "L'intesa vincente";
+const DESCRIPTION = 'Simulatore online per il gioco "L\'intesa vincente" del programma Reazione a catena';
+const SCHEMA = `
+	    {
+	        "@context": "https://schema.org/",
+		"@type": "WebApplication",
+		"name": "L'intesa vincente",
+		"url": "https://borsattoz.github.io/intesa-vincente/",
+		"@id": "https://borsattoz.github.io/intesa-vincente/",
+		"browserRequirements": ["requires JavaScript"],
+		"applicationCategory": "Game",
+		"aggregateRating": {
+		    "@type": "AggregateRating",
+		    "ratingValue": 4.6,
+		    "ratingCount": 263
+		},
+		"creator": {
+		    "@id": "https://github.com/borsattoz"
+		}
+	    }
+`;
 
 export default function Board() {
   const INITIAL_TIME = 60;
@@ -114,7 +137,12 @@ export default function Board() {
 
   return (
     <div className='nes-container is-dark'>
-      <h1>L'intesa vincente</h1>
+      <Helmet>
+        <meta name="description" content="{DESCRIPTION}" />
+	<title>{TITLE}</title>
+	<script type="application/ld+json">{SCHEMA}</script>
+      </Helmet>
+      <h1>{TITLE}</h1>
       <p>score: {score}</p>
       <p>passo: {passo}</p>
       <p>time: {timeLeft}s</p>

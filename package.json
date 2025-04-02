@@ -20,6 +20,7 @@
     "@tsconfig/recommended": "^1.0.8",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
+    "@types/react-helmet": "^6.1.11",
     "@web/dev-server": "^0.4.6",
     "@web/rollup-plugin-copy": "^0.5.1",
     "rollup": "^4.34.9",
@@ -30,6 +31,7 @@
   "dependencies": {
     "nes.css": "^2.2.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-helmet": "^6.1.0"
   }
 }
