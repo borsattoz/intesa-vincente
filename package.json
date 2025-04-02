@@ -1,7 +1,7 @@
 {
   "name": "intesa-vincente",
   "version": "0.0.1",
-  "description": "Simulatore per il gioco \"L'intesa vincente\" del programma Reazione a catena",
+  "description": "Simulatore online per il gioco \"L'intesa vincente\" del programma Reazione a catena",
   "license": "ISC",
   "author": "borsattoz",
   "type": "module",
