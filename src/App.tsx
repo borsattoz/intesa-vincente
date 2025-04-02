@@ -9,8 +9,8 @@ const SCHEMA = `
 		"@context": "https://schema.org/",
 		"@type": "WebApplication",
 		"name": "L'intesa vincente",
-		"url": "https://borsattoz.github.io/intesa-vincente/",
-		"@id": "https://borsattoz.github.io/intesa-vincente/",
+		"url": "${window.location.href}",
+		"@id": "${window.location.href}",
 		"browserRequirements": ["requires JavaScript"],
 		"applicationCategory": "Game",
 		"aggregateRating": {
