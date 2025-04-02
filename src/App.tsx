@@ -143,9 +143,9 @@ export default function Board() {
 	<script type="application/ld+json">{SCHEMA}</script>
       </Helmet>
       <h1>{TITLE}</h1>
-      <p>score: {score}</p>
+      <p>punteggio: {score}</p>
       <p>passo: {passo}</p>
-      <p>time: {timeLeft}s</p>
+      <p>tempo rimasto: {timeLeft}s</p>
       <h2 className='nes-container is-dark'>{word.toUpperCase()}</h2>
       <p><button onClick={() => start()} disabled={isDisabledStart} className={`nes-btn ${isDisabledStart ? "is-disabled" : ""}`}>VIA</button></p>
       <p><button onClick={() => pause()} disabled={isDisabledPause} className={`nes-btn ${isDisabledPause ? "is-disabled" : ""}`}>PRENOTA</button></p>
