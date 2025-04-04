@@ -1,6 +1,8 @@
 # intesavincente.it
 [intesavincente.it](https://intesavincente.it/) è un simulatore per il browser in TypeScript de "L'intesa vincente", penultimo gioco del programma Rai [Reazione a catena](https://www.raiplay.it/programmi/reazioneacatena).
 
+Il database delle parole (`src/words.txt`) contiene esclusivamente parole presenti in puntate andate in onda.
+
 ## Sviluppo
 Installare le dipendenze:
 ```sh
@@ -15,4 +17,4 @@ Contemporaneamente, eseguire in un'altra finestra di terminale:
 npm start
 ```
 ## Contributi
-Pull request sono gradite. Ci sono ancora alcune caratteristiche che non sono implementate, come il "raddoppio" e il "controllo remoto" del pulsante "Prenota".
+Pull request sono gradite. Si possono richiedere nuove parole nel database, purchè presenti in puntate andate in onda. Ci sono ancora alcune caratteristiche che non sono implementate, come il "raddoppio" e il "controllo remoto" del pulsante "Prenota".
