@@ -17,4 +17,4 @@ Contemporaneamente, eseguire in un'altra finestra di terminale:
 npm start
 ```
 ## Contributi
-Pull request sono gradite. Si possono richiedere nuove parole nel database, purchè presenti in puntate andate in onda. Ci sono ancora alcune caratteristiche che non sono implementate, come il "raddoppio" e il "controllo remoto" del pulsante "Prenota".
+Pull request sono gradite. Si possono richiedere nuove parole nel database, purché presenti in puntate andate in onda. Ci sono ancora alcune caratteristiche che non sono implementate, come il "raddoppio" e il "controllo remoto" del pulsante "PRENOTA".
