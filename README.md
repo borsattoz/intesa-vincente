@@ -3,16 +3,16 @@
 
 ## Sviluppo
 Installare le dipendenze:
-`sh
+```sh
 npm i
-`
+```
 Eseguire in una finestra di terminale:
-`sh
+```sh
 npm run build-watch
-`
+```
 Contemporaneamente, eseguire in un'altra finestra di terminale:
-`sh
+```sh
 npm start
-`
+```
 ## Contributi
 Pull request sono gradite. Ci sono ancora alcune caratteristiche che non sono implementate, come il "raddoppio" e il "controllo remoto" del pulsante "Prenota".
